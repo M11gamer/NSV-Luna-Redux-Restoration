@@ -655,7 +655,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 						organ = new /obj/item/robot_parts/l_leg(owner.loc)
 					else
 						organ= new /obj/item/weapon/organ/l_leg(owner.loc, owner)
-					
+
 				if(HAND_RIGHT)
 					if(!(status & ORGAN_ROBOT))
 						organ= new /obj/item/weapon/organ/r_hand(owner.loc, owner)
@@ -672,7 +672,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 					if(!(status & ORGAN_ROBOT))
 						organ = new /obj/item/weapon/organ/l_foot(owner.loc, owner)
 					owner.u_equip(owner.shoes)
-					
+
 
 			owner.visible_message("\red [owner.name]'s [display_name] flies off in bloody arc.",\
 			"<span class='moderate'><b>Your [display_name] goes flying off!</b></span>",\
@@ -716,7 +716,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 				if(FOOT_LEFT)
 					owner.u_equip(owner.shoes)
 
-					
+
 
 			owner.visible_message("\red [owner.name]'s [display_name] explodes into gore!",\
 			"<span class='moderate'><b>Your [display_name] explodes into gore!</b></span>",\
@@ -775,7 +775,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 		W.germ_level = 0
 	return rval
 
-/datum/organ/external/proc/clamp()
+/datum/organ/external/proc/clamp_i()
 	var/rval = 0
 	src.status &= ~ORGAN_BLEEDING
 	for(var/datum/wound/W in wounds)
